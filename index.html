@@ -10,7 +10,17 @@
     </head>
     <body>
         <div id="home-page" data-role="page">
+		
+			<div data-role="panel" id="mypanel" data-position="left" data-display="reveal">
+				<ul>
+					<li><a data-icon="home" class="ui-btn-active" href="index.html">Home</a></li>
+					<li><a data-icon="pencil" data-ajax="false" href="blog.html">Blog</a></li>
+					<li><a data-icon="calendar" href="events.html">Events</a></li>
+				</ul>
+			</div><!-- /#panel-menu -->
+		
 			<div id="home-header" data-role="header">
+				<a data-role="button" data-icon="bars" href="#mypanel">Open panel</a>
 				<h1><i class="icon-home"></i> zAPF</h1>
 			</div><!-- /#header -->
     
