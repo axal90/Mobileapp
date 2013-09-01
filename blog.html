@@ -6,11 +6,22 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
         <link rel="stylesheet" type="text/css" href="css/jqm.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link type="text/css" rel="stylesheet" media="all" href="css/mmenu.css" />
         <title>Blog</title>
     </head>
     <body>
 		<div id="blog-page" data-role="page">
+		
+			<nav id="my-menu">
+			   <ul>
+					<li><a data-ajax="false" href="index.html">Home</a></li>
+					<li><a class="ui-btn-active" data-ajax="false" href="blog.html">Blog</a></li>
+					<li class="Label">Website</li>
+			   </ul>
+			</nav><!-- /#panel-menu -->
+		
 			<div data-role="header">
+				<a data-iconpos="notext" data-corners="false" data-role="button" data-icon="th-list" href="#my-menu"></a>
 				<h1><i class="icon-home"></i> zAPF</h1>
 			</div><!-- /#header -->
 			
@@ -36,9 +47,8 @@
 			<div id="footer" data-role="footer" data-position="fixed">
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
-						<li><a data-icon="home" href="index.html">Home</a></li>
+						<li><a data-icon="home" data-ajax="false" href="index.html">Home</a></li>
 						<li><a data-icon="pencil" data-ajax="false" class="ui-btn-active" href="blog.html">Blog</a></li>
-						<li><a data-icon="calendar" href="events.html">Events</a></li>
 					</ul>
 				</div><!-- /navbar -->
 			</div><!-- /#footer -->
@@ -54,13 +64,23 @@
 				$.support.cors = true;
 				$.mobile.pushStateEnabled = false;
 			});
+			
+			$(function() {
+				$("#my-menu").mmenu({
+					configuration: {
+						selectedClass: "ui-btn-active"
+					}
+				});
+			});
         </script>
         <script type="text/javascript" src="js/libs/jqm.js"></script>
         <script type="text/javascript" src="js/libs/handlebars.js"></script>
+        <script type="text/javascript" src="js/libs/mmenu.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             
             app.blog();
+			
         </script>
     </body>
 </html>
