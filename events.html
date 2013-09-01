@@ -29,7 +29,7 @@
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
 						<li><a data-icon="home" href="index.html">Home</a></li>
-						<li><a data-icon="pencil" href="blog.html">Blog</a></li>
+						<li><a data-icon="pencil" data-ajax="false" href="blog.html">Blog</a></li>
 						<li><a data-icon="calendar" class="ui-btn-active" href="events.html">Events</a></li>
 					</ul>
 				</div><!-- /navbar -->
@@ -38,6 +38,14 @@
 		
 		<script src="phonegap.js"></script>
         <script type="text/javascript" src="js/libs/jquery.js"></script>
+		<script type="text/javascript">
+            $(document).bind("mobileinit", function(){
+  
+				$.mobile.allowCrossDomainPages = true;
+				$.support.cors = true;
+				$.mobile.pushStateEnabled = false;
+			});
+        </script>
         <script type="text/javascript" src="js/libs/jqm.js"></script>
         <script type="text/javascript" src="js/libs/handlebars.js"></script>
         <script type="text/javascript" src="js/index.js"></script>

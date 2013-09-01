@@ -25,7 +25,7 @@
 					
 					{{#each posts}}
 						
-						<li><a data-transition="slide" href="single.html?{{@index}}">{{title}}</a></li>
+						<li><a data-ajax="false" href="single.html?{{@index}}">{{title}}</a></li>
 
 					{{/each}}
 					</ul>
@@ -37,7 +37,7 @@
 				<div data-role="navbar" data-iconpos="top">
 					<ul>
 						<li><a data-icon="home" href="index.html">Home</a></li>
-						<li><a data-icon="pencil" class="ui-btn-active" href="blog.html">Blog</a></li>
+						<li><a data-icon="pencil" data-ajax="false" class="ui-btn-active" href="blog.html">Blog</a></li>
 						<li><a data-icon="calendar" href="events.html">Events</a></li>
 					</ul>
 				</div><!-- /navbar -->
@@ -47,6 +47,14 @@
 		
 		<script src="phonegap.js"></script>
         <script type="text/javascript" src="js/libs/jquery.js"></script>
+		<script type="text/javascript">
+            $(document).bind("mobileinit", function(){
+  
+				$.mobile.allowCrossDomainPages = true;
+				$.support.cors = true;
+				$.mobile.pushStateEnabled = false;
+			});
+        </script>
         <script type="text/javascript" src="js/libs/jqm.js"></script>
         <script type="text/javascript" src="js/libs/handlebars.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
