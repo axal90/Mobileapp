@@ -12,7 +12,7 @@
     
 		<div id="single-post-page" data-role="page">
 		
-			<div data-role="panel" id="mypanel" data-position="left" data-theme="a" data-display="push">
+			<div data-role="panel" id="mypanel" data-position="left" data-theme="a" data-display="reveal">
 				 <ul data-role="listview" data-theme="a">
 					<li><a data-icon="home" data-ajax="false" href="index.html">Home</a></li>
 					<li><a data-icon="pencil" data-ajax="false" class="ui-btn-active" href="blog.html">Blog</a></li>
@@ -47,12 +47,6 @@
 			</div><!-- /#home-page -->
 			
 			<div id="footer" data-role="footer" data-position="fixed">
-				<div data-role="navbar" data-iconpos="top">
-					<ul>
-						<li><a data-icon="home" data-ajax="false" href="index.html">Home</a></li>
-						<li><a data-icon="pencil" data-ajax="false" href="blog.html">Blog</a></li>
-					</ul>
-				</div><!-- /navbar -->
 			</div><!-- /#footer -->
 
 		</div><!-- /#page -->
@@ -69,7 +63,6 @@
 			
 			window.onload = function() {
 				$(function(){
-					  // Bind the swipeleftHandler callback function to the swipe event on div.box
 					$( "body" ).on( "swiperight", swiperightHandler );
 					 
 					  // Callback function references the event target and adds the 'swipe' class to it
