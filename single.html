@@ -14,7 +14,7 @@
     <body>
 		<div id="single-post-page" data-role="page" data-theme="b">
 		
-			<div data-role="panel" id="mypanel" data-theme="b">
+			<div data-role="panel" id="menupanel" data-position-fixed="true" data-theme="b">
 				<ul data-role="listview">
 					<li data-role="list-divider">Your wishes</li>
 					<li data-icon="home"><a data-ajax="false" href="index.html">Home</a></li>
@@ -28,7 +28,7 @@
 			</div><!-- /#panel-menu -->
 		
 			<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
-				<a href="#mypanel" data-ajax="false"><i class='icon-ellipsis-vertical'></i></a>
+				<a href="#menupanel" data-ajax="false"><i class='icon-ellipsis-vertical'></i></a>
 				<h1>zAPF</h1>
 			</div><!-- /#header -->
 			
@@ -67,7 +67,7 @@
 					 
 					  // Callback function references the event target and adds the 'swipe' class to it
 					function swiperightHandler( event ){
-						$( "#mypanel" ).panel( "open" );
+						$( "#menupanel" ).panel( "open" );
 					}
 				});
 			};
