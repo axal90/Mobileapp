@@ -18,20 +18,22 @@
 				$.mobile.allowCrossDomainPages = true;
 				$.support.cors = true;
 				$.mobile.pushStateEnabled = false;
+				
 			});
 			
-			
 			window.onload = function() {
+			
 				$(function(){
-					  // Bind the swipeleftHandler callback function to the swipe event on div.box
-					$( "body" ).on( "swiperight", swiperightHandler );
-					 
-					  // Callback function references the event target and adds the 'swipe' class to it
-					function swiperightHandler( event ){
-						$( "#menupanel" ).panel( "open" );
-					}
+					$( "body" ).on( "swiperight", openPanel );
 				});
+				
+				document.addEventListener("menubutton", openPanel, false);
+				
 			};
+			
+			function openPanel() {
+				$( "#menupanel" ).panel( "open" );
+			}
         </script>
         <script type="text/javascript" src="js/libs/jqm.js"></script>
         <script type="text/javascript" src="js/libs/handlebars.js"></script>
