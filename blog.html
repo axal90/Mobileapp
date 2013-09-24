@@ -4,29 +4,32 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-        <link rel="stylesheet" type="text/css" href="css/jqm.css" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" href="css/jqm.css" />
+        <link rel="stylesheet" href="css/index.css" />
+        <link rel="stylesheet" href="css/dark-theme.css" />
+        <link rel="stylesheet" href="css/color-blue.css" />
         <title>Blog</title>
     </head>
     <body>
-		<div id="blog-page" data-role="page">
+		<div id="blog-page" data-role="page" data-theme="b">
 		
-			<div data-role="panel" id="mypanel" data-position="left" data-theme="a" data-display="reveal">
-				 <ul data-role="listview" data-theme="a">
-					<li><a data-icon="home" data-ajax="false" href="index.html">Home</a></li>
-					<li><a data-icon="pencil" data-ajax="false" class="ui-btn-active" href="blog.html">Blog</a></li>
-					<li>Acura</li>
-					<li>Audi</li>
-					<li>BMW</li>
-					<li>Cadillac</li>
-					<li>Ferrari</li>
+			<div data-role="panel" id="mypanel" data-theme="b">
+				<ul data-role="listview">
+					<li data-role="list-divider">Your wishes</li>
+					<li data-icon="home"><a data-ajax="false" href="index.html">Home</a></li>
+					<li data-icon="pencil"><a data-ajax="false" href="blog.html">Blog</a></li>
+					<li data-icon="music"><a href="#">Play Music</a></li>
+					<li data-icon="fire"><a href="#">Make a fire</a></li>
+					<li data-icon="bullhorn"><a href="#">Shout it loud</a></li>
+					<li data-icon="group"><a href="#">Meet friends</a></li>
+					<li data-icon="trophy"><a href="#">Win a Trophy</a></li>
 				</ul>
-					
 			</div><!-- /#panel-menu -->
 		
-			<div data-role="header">
-				<a data-iconshadow="false" data-shadow="false" data-iconpos="notext" data-corners="false" data-role="button" data-icon="th-list" href="#mypanel"></a>
-				<h1><i class="icon-home"></i> zAPF</h1>
+			<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+				<a href="#mypanel" data-ajax="false"><i class='icon-ellipsis-vertical'></i></a>
+				<h1>zAPF</h1>
 			</div><!-- /#header -->
 			
 			<div id="blog-content" data-role="content">
@@ -36,7 +39,7 @@
 
 
 				<script id="blog-template" type="text/x-handlebars-template">
-					<ul data-role="listview" data-inset="true" id="all-posts">
+					<ul data-role="listview" id="all-posts">
 					
 					{{#each posts}}
 						
@@ -47,15 +50,6 @@
 				</script>
 
 			</div><!-- /#home-page -->
-			
-			<div id="footer" data-role="footer" data-position="fixed">
-				<div data-role="navbar" data-iconpos="top">
-					<ul>
-						<li><a data-icon="home" data-ajax="false" href="index.html">Home</a></li>
-						<li><a data-icon="pencil" data-ajax="false" class="ui-btn-active" href="blog.html">Blog</a></li>
-					</ul>
-				</div><!-- /navbar -->
-			</div><!-- /#footer -->
 
         </div><!-- /#page -->
 		
