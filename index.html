@@ -60,14 +60,22 @@
 				<h1>zAPF</h1>
 			</div><!-- /#header -->
     
-			<div id="home-content" data-role="content">
+			<div id="login-content" data-role="content">
         
 				<div class="inset">
-					<div class="text-center">
-						<h1>Welcome to my site</h1>
-						<h2>I am a freelance web designer and front end developer.</h2>
-						<h3>I make websites, WordPress themes and plugins, custom web applications and other web stuff</h3>
-					</div>
+					  <form id="loginForm">
+				26        <div data-role="fieldcontain" class="ui-hide-label">
+				27            <label for="username">Username:</label>
+				28            <input type="text" name="username" id="username" value="" placeholder="Username" />
+				29        </div>
+				30
+				31        <div data-role="fieldcontain" class="ui-hide-label">
+				32            <label for="password">Password:</label>
+				33            <input type="password" name="password" id="password" value="" placeholder="Password" />
+				34        </div>
+				35
+				36        <input type="submit" value="Login" id="submitButton">
+			37        </form>
 				</div>
 
 			</div><!-- /#home-page -->
