@@ -23,7 +23,7 @@
 			jQuery(document).ready(function($) {
 
 				// Perform AJAX login on form submit
-				$('form#login').on('submit', function(e){
+				$('form#login').submit( function(e){
 					$('form#login p.status').show().text('Sending user info, please wait...');
 					$.ajax({
 						type: 'POST',
