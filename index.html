@@ -20,6 +20,31 @@
 				$.mobile.pushStateEnabled = false;
 				
 			});
+			jQuery(document).ready(function($) {
+
+				// Perform AJAX login on form submit
+				$('form#login').on('submit', function(e){
+					$('form#login p.status').show().text('Sending user info, please wait...');
+					$.ajax({
+						type: 'POST',
+						dataType: 'json',
+						url: http://zapf.se/wp-admin/admin-ajax.php,
+						data: { 
+							'action': 'ajaxlogin', //calls wp_ajax_nopriv_ajaxlogin
+							'username': $('form#login #username').val(), 
+							'password': $('form#login #password').val(), 
+							'security': $('form#login #security').val() },
+						success: function(data){
+							$('form#login p.status').text(data.message);
+							if (data.loggedin == true){
+								$.mobile.changePage( "/blog.html", { changeHash: false });
+							}
+						}
+					});
+					e.preventDefault();
+				});
+
+			});
         </script>
         <script type="text/javascript" src="js/libs/jqm.js"></script>
         <script type="text/javascript" src="js/libs/handlebars.js"></script>
@@ -32,7 +57,8 @@
 			<div id="login-content" data-role="content">
         
 				<div class="inset">
-					<form id="loginForm">
+					<form id="login">
+						<p class="status"></p>
 				        <div data-role="fieldcontain" class="ui-hide-label">
 				            <label for="username">Username:</label>
 							<input type="text" name="username" id="username" value="" placeholder="Username" />
@@ -42,7 +68,7 @@
 							<input type="password" name="password" id="password" value="" placeholder="Password" />
 						</div>
 				
-						<input type="submit" value="Login" id="submitButton">
+						<input type="submit" value="Login" name="submit" id="submit">
 					</form>
 				</div>
 
