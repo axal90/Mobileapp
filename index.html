@@ -20,31 +20,8 @@
 				$.mobile.pushStateEnabled = false;
 				
 			});
-			jQuery(document).ready(function($) {
-
-				// Perform AJAX login on form submit
-				$('form#login').submit( function(e){
-					$('form#login p.status').show().text('Sending user info, please wait...');
-					$.ajax({
-						type: 'POST',
-						dataType: 'json',
-						url: http://zapf.se/wp-admin/admin-ajax.php,
-						data: { 
-							'action': 'ajaxlogin', //calls wp_ajax_nopriv_ajaxlogin
-							'username': $('form#login #username').val(), 
-							'password': $('form#login #password').val(), 
-							'security': $('form#login #security').val() },
-						success: function(data){
-							$('form#login p.status').text(data.message);
-							if (data.loggedin == true){
-								$.mobile.changePage( "/blog.html", { changeHash: false });
-							}
-						}
-					});
-					e.preventDefault();
-				});
-
-			});
+			
+			
         </script>
         <script type="text/javascript" src="js/libs/jqm.js"></script>
         <script type="text/javascript" src="js/libs/handlebars.js"></script>
@@ -53,23 +30,29 @@
     </head>
     <body>
         <div id="home-page" data-role="page" data-theme="b">
-    
+		
+			<div data-role="panel" id="menupanel" data-position-fixed="true" data-theme="b">
+				<ul data-role="listview">
+					<li data-role="list-divider">Your wishes</li>
+					<li data-icon="home"><a data-ajax="false" href="index.html">Home</a></li>
+					<li data-icon="pencil"><a data-ajax="false" href="blog.html">Blog</a></li>
+					<li data-icon="music"><a href="#">Play Music</a></li>
+					<li data-icon="fire"><a href="#">Make a fire</a></li>
+					<li data-icon="bullhorn"><a href="#">Shout it loud</a></li>
+					<li data-icon="group"><a href="#">Meet friends</a></li>
+					<li data-icon="trophy"><a href="#">Win a Trophy</a></li>
+				</ul>
+			</div><!-- /#panel-menu -->
+		
+			<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+				<a href="#menupanel" data-ajax="false"><i class='icon-ellipsis-vertical'></i></a>
+				<h1>zAPF</h1>
+			</div><!-- /#header -->
+			
 			<div id="login-content" data-role="content">
         
 				<div class="inset">
-					<form id="login">
-						<p class="status"></p>
-				        <div data-role="fieldcontain" class="ui-hide-label">
-				            <label for="username">Username:</label>
-							<input type="text" name="username" id="username" value="" placeholder="Username" />
-						</div>
-				        <div data-role="fieldcontain" class="ui-hide-label">
-							<label for="password">Password:</label>
-							<input type="password" name="password" id="password" value="" placeholder="Password" />
-						</div>
-				
-						<input type="submit" value="Login" name="submit" id="submit">
-					</form>
+					lol
 				</div>
 
 			</div><!-- /#home-page -->
@@ -78,6 +61,14 @@
         <script type="text/javascript">
             
             app.initialize();
+			
+			jQuery(document).ready(function($) {
+
+				if (localStorage.getItem("token") === null) {
+					$.mobile.changePage( "login.html", { transition: "slideup"} );
+				}
+
+			});
 			
         </script>
     </body>
